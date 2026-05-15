@@ -9,20 +9,14 @@ import authRoutes from './routes/auth.js';
 dotenv.config();
 
 const fastify = Fastify({ logger: true });
-
-// Conexión a la base de datos
 connectDB();
 
-// Configuración de middlewares
 fastify.register(cors);
-// Habilita el procesamiento de archivos multimedia pesados
 fastify.register(multipart, { attachFieldsToBody: false, limits: { fileSize: 15 * 1024 * 1024 } }); 
 
-// Registrar rutas
 fastify.register(reportRoutes, { prefix: '/api' });
 fastify.register(authRoutes, { prefix: '/api/auth' });
 
-// Ruta de comprobación
 fastify.get('/', async () => {
   return { status: 'UrbanVía API en línea (Fastify)' };
 });
