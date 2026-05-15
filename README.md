@@ -3,11 +3,11 @@
 Este es el backend del proyecto UrbanVía, una API REST orientada al registro y gestión de incidencias viales (baches) en la vía pública.
 
 El proyecto frontend (interfaz de usuario) se encuentra en un repositorio separado. Puedes acceder a él aquí:  
-[Inserta aquí el enlace de GitHub del frontend]
+https://github.com/Faalvial/ExamenParcialFrontend
 
 ## Documentación
 
-Todo el detalle sobre la arquitectura, los requisitos, las historias de usuario y los casos de prueba realizados se encuentra en el documento Word ubicado dentro de la carpeta `docs/`.
+Todo el detalle sobre la arquitectura, los requisitos, las historias de usuario y los casos de prueba realizados se encuentra en el documento PDF ubicado dentro de la carpeta `docs/`.
 
 ## Tecnologías utilizadas
 
