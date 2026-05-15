@@ -4,6 +4,7 @@ import multipart from '@fastify/multipart';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import reportRoutes from './routes/reports.js';
+import authRoutes from './routes/auth.js';
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ fastify.register(multipart, { attachFieldsToBody: false, limits: { fileSize: 15 
 
 // Registrar rutas
 fastify.register(reportRoutes, { prefix: '/api' });
+fastify.register(authRoutes, { prefix: '/api/auth' });
 
 // Ruta de comprobación
 fastify.get('/', async () => {
