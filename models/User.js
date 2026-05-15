@@ -4,7 +4,8 @@ const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  role: { type: String, enum: ['vecino', 'municipal'], default: 'vecino' }
+  // Actualizamos los roles aquí:
+  role: { type: String, enum: ['vecino', 'supervisor'], default: 'vecino' }
 }, { timestamps: true });
 
 export default mongoose.model('User', userSchema);

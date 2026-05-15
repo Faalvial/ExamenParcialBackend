@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 
 const reportSchema = new mongoose.Schema({
+  // Nuevo campo para enlazar el reporte con el usuario:
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   title: { type: String, required: true },
   description: { type: String, required: true },
   location: { type: String, required: true },
@@ -14,7 +16,6 @@ const reportSchema = new mongoose.Schema({
     enum: ['reportado', 'en_progreso', 'resuelto'], 
     default: 'reportado' 
   },
-  // Requisito: API con envío de imágenes, video o audio (2 pts)
   mediaFiles: [{
     filename: String,
     mimetype: String
