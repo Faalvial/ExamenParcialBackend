@@ -41,4 +41,17 @@ export default async function reportRoutes(fastify, options) {
       return reply.status(500).send({ message: 'Error al obtener reportes' });
     }
   });
+  // Caso de Uso 3: Eliminar un reporte
+  fastify.delete('/reports/:id', async (request, reply) => {
+    try {
+      const report = await Report.findByIdAndDelete(request.params.id);
+      if (!report) {
+        return reply.status(404).send({ message: 'Reporte no encontrado' });
+      }
+      return reply.send({ message: 'Reporte eliminado exitosamente' });
+    } catch (error) {
+      fastify.log.error(error);
+      return reply.status(500).send({ message: 'Error al eliminar el reporte' });
+    }
+  });
 }
